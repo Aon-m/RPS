@@ -66,8 +66,9 @@ function playRound(humanChoice) {
     round += 1;
 
     console.log(`Round ${round} has started, make a chioce`);
-  }
-  else {
+
+    endGame();
+  } else {
     console.log("Game hasn't started! Click the Start game button.");
   }
 }
@@ -81,7 +82,10 @@ function playGame() {
 
   gameStarted = true;
   console.log(`Round ${round} has started, make a chioce`);
+}
 
+// RESET FUNCTION
+function endGame() {
   if (humanScore < 5 && computerScore < 5) {
     gameStarted = true;
   } else {
