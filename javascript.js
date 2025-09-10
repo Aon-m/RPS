@@ -85,6 +85,11 @@ function playRound() {
 
 // GAME FUNCTION
 function playGame() {
+  if (gameStarted === true) {
+    alert("Game in progress!");
+    return; // stop here, don’t restart
+  }
+
   gameStarted = true;
   alert(`Round ${round} has started, make a chioce`);
 
