@@ -3,8 +3,7 @@ const rock = document.querySelector("#rock"),
   paper = document.querySelector("#paper"),
   scissors = document.querySelector("#scissors"),
   playGamebtn = document.querySelector("#playGame"),
-  main = document.querySelector("main"),
-  scoreboard = document.createElement("div");
+  main = document.querySelector("main");
 
 // Add event listeners to buttons
 rock.addEventListener("click", () => getHumanChoice("rock"));
@@ -32,7 +31,7 @@ function getHumanChoice(choice) {
     humanChoice = choice;
     humanChoiceMade = true;
   } else {
-    console.log("Game hasn't started! Click the Start game button.");
+    alert("Game hasn't started! Click the Start game button.");
   }
 }
 
@@ -43,13 +42,20 @@ function getComputerChoice() {
   return computerChoice;
 }
 
+// SCOREBOARD
+const scoreboard = document.querySelector("#scoreboard");
+
+console.log = function (message) {
+  scoreboard.innerHTML += message + "<br>";
+};
+
 // ROUND FUNCTION
 function playRound() {
   if (gameStarted === true) {
     getComputerChoice();
     computerChoice = getComputerChoice();
 
-    console.log(`I choose ${computerChoice}`);
+    alert(`I choose ${computerChoice}`);
 
     if (humanChoice === computerChoice) {
       console.log("It's a Tie!");
@@ -58,12 +64,12 @@ function playRound() {
       (humanChoice === "paper" && computerChoice === "rock") ||
       (humanChoice === "scissors" && computerChoice === "paper")
     ) {
-      console.log(
+      alert(
         `You win! ${humanChoice.toUpperCase()} beats ${computerChoice.toUpperCase()}!`
       );
       humanScore += 1;
     } else {
-      console.log(
+      alert(
         `You lose! ${computerChoice.toUpperCase()} beats ${humanChoice.toUpperCase()}!`
       );
       computerScore += 1;
@@ -73,14 +79,14 @@ function playRound() {
 
     round += 1;
 
-    console.log(`Round ${round} has started, make a chioce`);
+    alert(`Round ${round} has started, make a chioce`);
   }
 }
 
 // GAME FUNCTION
 function playGame() {
   gameStarted = true;
-  console.log(`Round ${round} has started, make a chioce`);
+  alert(`Round ${round} has started, make a chioce`);
 
   if (humanScore < 5 && computerScore < 5) {
     gameStarted = true;

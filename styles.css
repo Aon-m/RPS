@@ -24,6 +24,7 @@ button {
   margin: 1rem auto;
   border-radius: 2rem;
   border: 1px solid black;
+  font-size: clamp(0.7rem, calc(0.7rem + 1vw), 1rem);
 }
 button:hover {
   cursor: pointer;
@@ -69,6 +70,25 @@ button:hover {
 #scissors:active {
   background: hsl(0, 72%, 67%);
   transition: transform 0.1s;
+}
+
+#scoreboard {
+  margin: 2rem;
+  width: 70vw;
+  max-width: 45ch;
+  background: hsl(0, 0%, 100%);
+  border-radius: 2rem;
+  text-align: center;
+  font-size: clamp(0.7rem, calc(0.7rem + 1vw), 1rem);
+  font-weight: 400;
+}
+
+#scoreboard h2 {
+  font-weight: 900;
+  border-radius: 2rem 2rem 0 0;
+  font-size: clamp(1rem, calc(0.7rem + 1vw), 1.2rem);
+  padding: 0.5rem 6rem;
+  border: 1px solid black;
 }
 
 @media screen and (min-width: 40rem) {
