@@ -22,16 +22,6 @@ let gameStarted = false,
   humanScore = 0,
   round = 1;
 
-// PLAYER INPUT
-function getHumanChoice(choice) {
-  if (gameStarted === true) {
-    humanChoice = choice;
-    humanChoiceMade = true;
-  } else {
-    console.log("Game hasn't started! Click the Start game button.");
-  }
-}
-
 // COMPUTER INPUT
 function getComputerChoice() {
   let choice = ["rock", "paper", "scissors"];
@@ -76,6 +66,9 @@ function playRound(humanChoice) {
     round += 1;
 
     console.log(`Round ${round} has started, make a chioce`);
+  }
+  else {
+    console.log("Game hasn't started! Click the Start game button.");
   }
 }
 
