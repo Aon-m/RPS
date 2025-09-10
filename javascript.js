@@ -6,14 +6,11 @@ const rock = document.querySelector("#rock"),
   main = document.querySelector("main");
 
 // Add event listeners to buttons
-rock.addEventListener("click", () => getHumanChoice("rock"));
-rock.addEventListener("click", () => playRound());
+rock.addEventListener("click", () => playRound("rock"));
 
-paper.addEventListener("click", () => getHumanChoice("paper"));
-paper.addEventListener("click", () => playRound());
+paper.addEventListener("click", () => playRound("paper"));
 
-scissors.addEventListener("click", () => getHumanChoice("scissors"));
-scissors.addEventListener("click", () => playRound());
+scissors.addEventListener("click", () => playRound("scissors"));
 
 playGamebtn.addEventListener("click", () => playGame());
 
@@ -50,7 +47,7 @@ console.log = function (message) {
 };
 
 // ROUND FUNCTION
-function playRound() {
+function playRound(humanChoice) {
   if (gameStarted === true) {
     computerChoice = getComputerChoice();
 
