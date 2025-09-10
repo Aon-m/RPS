@@ -31,7 +31,7 @@ function getHumanChoice(choice) {
     humanChoice = choice;
     humanChoiceMade = true;
   } else {
-    alert("Game hasn't started! Click the Start game button.");
+    console.log("Game hasn't started! Click the Start game button.");
   }
 }
 
@@ -52,10 +52,9 @@ console.log = function (message) {
 // ROUND FUNCTION
 function playRound() {
   if (gameStarted === true) {
-    getComputerChoice();
     computerChoice = getComputerChoice();
 
-    alert(`I choose ${computerChoice}`);
+    console.log(`I choose ${computerChoice}`);
 
     if (humanChoice === computerChoice) {
       console.log("It's a Tie!");
@@ -64,12 +63,12 @@ function playRound() {
       (humanChoice === "paper" && computerChoice === "rock") ||
       (humanChoice === "scissors" && computerChoice === "paper")
     ) {
-      alert(
+      console.log(
         `You win! ${humanChoice.toUpperCase()} beats ${computerChoice.toUpperCase()}!`
       );
       humanScore += 1;
     } else {
-      alert(
+      console.log(
         `You lose! ${computerChoice.toUpperCase()} beats ${humanChoice.toUpperCase()}!`
       );
       computerScore += 1;
@@ -79,19 +78,19 @@ function playRound() {
 
     round += 1;
 
-    alert(`Round ${round} has started, make a chioce`);
+    console.log(`Round ${round} has started, make a chioce`);
   }
 }
 
 // GAME FUNCTION
 function playGame() {
   if (gameStarted === true) {
-    alert("Game is already in progress!");
+    console.log("Game is already in progress!");
     return; // stop here, don’t restart
   }
 
   gameStarted = true;
-  alert(`Round ${round} has started, make a chioce`);
+  console.log(`Round ${round} has started, make a chioce`);
 
   if (humanScore < 5 && computerScore < 5) {
     gameStarted = true;
