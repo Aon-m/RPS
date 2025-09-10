@@ -86,7 +86,7 @@ function playRound() {
 // GAME FUNCTION
 function playGame() {
   if (gameStarted === true) {
-    alert("Game in progress!");
+    alert("Game is already in progress!");
     return; // stop here, don’t restart
   }
 
